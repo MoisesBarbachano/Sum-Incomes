@@ -1,25 +1,19 @@
-# README
+# Carga de Ingresos
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Instalación de aplicación y ejecución
 
-Things you may want to cover:
+Pasos a seguir:
 
-* Ruby version
+* Clonar la rama principal "main"
 
-* System dependencies
+* Cambiar dentro de "config/database.yml" los registros username y password por los correspondientes a su Base de Datos.
 
-* Configuration
+* Ejecutar en la consola: "rails db:create" y "rails db:migrate"
 
-* Database creation
+* Realizar las pruebas RSPEC en la consola: "bundle exec rspec"
 
-* Database initialization
+* Iniciar la aplicación con "rails s"
 
-* How to run the test suite
+* Acceder a la dirección "localhost:3000"
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-Carga de de Ingresos
+* Se podrá cargar el archivo .tab y se mostrará los ingresos totales.
