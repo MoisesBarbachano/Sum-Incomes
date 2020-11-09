@@ -3,8 +3,39 @@
 <%= form_tag({action: :upload}, multipart: true) do %>
   <%= file_field_tag :file %>
 
-  <%= submit_tag "Cargar archivo" %>
+  <%= submit_tag("Cargar archivo", class: 'send-form') %>
 <% end %>
+
 <br>
 <label style="color: red;"><%= @error_income %></label>
-<label><strong>Ingresos totales:</strong> <%= @sum_incomes %></label>
+
+<% if @incomes %>
+  <label><strong>Ingresos totales:</strong> <%= @sum_incomes %></label>
+
+  <h3>Ingresos registrados</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Comprador</th>
+        <th>Descripción de item</th>
+        <th>Precio del item</th>
+        <th>Total de items</th>
+        <th>Dirección del vendedor</th>
+        <th>Vendedor</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @incomes.each do |income| %>
+        <tr>
+          <td><%= income.buyer.name %></td>
+          <td><%= income.item.description %></td>
+          <td><%= income.item.price %></td>
+          <td><%= income.quantity_items %></td>
+          <td><%= income.seller.address %></td>
+          <td><%= income.seller.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

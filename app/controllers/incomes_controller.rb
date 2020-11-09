@@ -9,6 +9,7 @@ class IncomesController < ApplicationController
     incomes.each { |income| items_incomes << income.quantity_items * income.item.price }
 
     @sum_incomes = items_incomes.inject(0, :+)
+    @incomes = incomes.includes(:buyer, :seller, :item) unless incomes.count.zero?
   end
 
   def upload
