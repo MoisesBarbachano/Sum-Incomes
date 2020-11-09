@@ -8,7 +8,11 @@ Pasos a seguir:
 
 * Cambiar dentro de "config/database.yml" los registros username y password por los correspondientes a su Base de Datos.
 
-* Ejecutar en la consola: "rails db:create" y "rails db:migrate"
+* Ejecutar en la consola: "yarn install --check-files" para verificar y actualizar cualquier archivo necesario con yarn.
+
+* Ejecutar en la consola: "rails db:create" para generar la base de datos con MySQL.
+
+* Ejecutar en la consola  "rails db:migrate" para ejecutar las migraciones (crear tablas y añadir columnas a tablas).
 
 * Realizar las pruebas RSPEC en la consola: "bundle exec rspec"
 
@@ -16,4 +20,4 @@ Pasos a seguir:
 
 * Acceder a la dirección "localhost:3000"
 
-* Se podrá cargar el archivo .tab y se mostrará los ingresos totales.
+* Se podrá cargar el archivo .tab y se mostrarán los ingresos totales.
